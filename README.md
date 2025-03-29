@@ -1,85 +1,103 @@
-# fashion-mnist-classification-api
-A deep learning-based Flask API for Fashion MNIST image classification using EfficientNetB0. The project includes model training, evaluation, and an authentication-protected endpoint for predicting fashion items from uploaded images.
-# Fashion MNIST Image Classification API
+# Fashion MNIST Classification API
 
-This repository contains an end-to-end **Fashion MNIST** image classification system. It includes:
-- A deep learning model built using **EfficientNetB0**
-- A **Flask API** for image classification
-- Preprocessing and dataset handling using **TensorFlow**
+## Overview
+This project implements an image classification model using **EfficientNetB0** to classify images from the **Fashion MNIST dataset**. The model is deployed as a **Flask API**, allowing users to upload images and receive predictions.A deep learning-based Flask API for Fashion MNIST image classification using EfficientNetB0. The project includes model training, evaluation, and an authentication-protected endpoint for predicting fashion items from uploaded images.
 
-## 📌 Project Overview
-This project classifies images from the **Fashion MNIST dataset** into 10 categories:
-1. T-shirt/top
-2. Trouser
-3. Pullover
-4. Dress
-5. Coat
-6. Sandal
-7. Shirt
-8. Sneaker
-9. Bag
-10. Ankle boot
+## Features
+- **Deep Learning Model:** Uses EfficientNetB0 for high-accuracy classification.
+- **Preprocessing Pipeline:** Normalization, augmentation, and dataset handling.
+- **Flask API:** Exposes an endpoint for image classification.
+- **Authentication:** Basic username-password authentication.
 
-## 🛠 Installation
-Clone the repository and install the dependencies:
+## Dataset
+The dataset used is **Fashion MNIST**, which consists of grayscale images (28x28) belonging to 10 different classes:
+- `T-shirt/top`
+- `Trouser`
+- `Pullover`
+- `Dress`
+- `Coat`
+- `Sandal`
+- `Shirt`
+- `Sneaker`
+- `Bag`
+- `Ankle boot`
+
+## Project Structure
+```
+├── app.py                 # Flask API for image classification
+├── train.py               # Model training script
+├── preprocess.py          # Data preprocessing and augmentation
+├── fashion_mnist_model.keras  # Trained model
+├── requirements.txt       # Dependencies
+├── README.md              # Project documentation
+```
+
+## Setup & Installation
+
+### 1. Clone the Repository
 ```bash
-# Clone the repository
-git clone https://github.com/your-username/fashion-mnist-api.git
-cd fashion-mnist-api
+git clone https://github.com/M-RajaBabu/fashion-mnist-classification-api.git
+cd fashion-mnist-classification-api
+```
 
-# Install dependencies
+### 2. Install Dependencies
+```bash
 pip install -r requirements.txt
 ```
 
-## 🏋️‍♂️ Training the Model
-To train the model, run:
+### 3. Train the Model (Optional)
+If you want to train the model from scratch:
 ```bash
 python train.py
 ```
-This script:
-- Loads the Fashion MNIST dataset
-- Preprocesses and augments the data
-- Trains an **EfficientNetB0** model
-- Saves the trained model as `fashion_mnist_model.keras`
 
-## 🚀 Running the Flask API
-Start the API server using:
+### 4. Run the Flask API
 ```bash
 python app.py
 ```
+The API will be available at `http://127.0.0.1:5000/`
 
-### API Endpoints
-#### 1️⃣ Upload & Predict
-**Endpoint:** `POST /predict`
+## Usage
+### 1. Upload an Image for Prediction
+You can access the API in two ways:
 
-**Authentication:** Basic Auth (`admin:password`)
+#### **Via Web Interface**
+- Open `http://127.0.0.1:5000/` in a browser.
+- Enter credentials and upload an image.
 
-**Request:** Upload an image (`.png`, `.jpg`, `.jpeg`)
+#### **Via cURL**
 ```bash
-curl -X POST -F "username=admin" -F "password=password" -F "image=@sample.png" http://127.0.0.1:5000/predict
+curl -X POST -F "image=@path/to/image.png" -F "username=admin" -F "password=password" http://127.0.0.1:5000/predict
 ```
 
-**Response:**
-```json
-{
-  "predicted_class": "Sneaker"
-}
+#### **Via Python**
+```python
+import requests
+files = {'image': open('test_image.png', 'rb')}
+data = {'username': 'admin', 'password': 'password'}
+response = requests.post('http://127.0.0.1:5000/predict', files=files, data=data)
+print(response.json())
 ```
 
-## 📂 File Structure
-```
-📂 fashion-mnist-api
-│── app.py            # Flask API for image classification
-│── train.py          # Model training script
-│── preprocess.py     # Data preprocessing
-│── requirements.txt  # Dependencies
-│── fashion_mnist_model.keras  # Trained model (generated after training)
-│── README.md         # Documentation
-```
+## Authentication
+The API requires authentication. Use:
+- **Username:** `admin`
+- **Password:** `password`
 
-## 📢 Contributing
-Feel free to open issues and contribute to improving this project. 🚀
+## Requirements
+- Python 3.x
+- TensorFlow
+- Flask
+- NumPy
+- Pillow
+- Scikit-learn
+- Matplotlib
 
-## 📜 License
-This project is licensed under the **MIT License**.
+## License
+This project is open-source and available under the MIT License.
+
+## Author
+**Raja Babu Meena**
+
+
 
