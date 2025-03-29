@@ -1,0 +1,50 @@
+(env) PS D:\deccan ai\train> python -u "d:\deccan ai\train\train.py"
+2025-03-28 22:18:33.815054: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-03-28 22:18:35.004795: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+Matplotlib is building the font cache; this may take a moment.
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz
+29515/29515 ━━━━━━━━━━━━━━━━━━━━ 0s 1us/step
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-images-idx3-ubyte.gz
+26421880/26421880 ━━━━━━━━━━━━━━━━━━━━ 3s 0us/step   
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-labels-idx1-ubyte.gz
+5148/5148 ━━━━━━━━━━━━━━━━━━━━ 0s 0us/step
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-images-idx3-ubyte.gz
+4422102/4422102 ━━━━━━━━━━━━━━━━━━━━ 0s 0us/step
+Train images shape: (60000, 28, 28)
+Test images shape: (10000, 28, 28)
+Unique classes: [0 1 2 3 4 5 6 7 8 9]
+2025-03-28 22:19:30.561739: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE3 SSE4.1 SSE4.2 AVX AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Train/Val/Test sizes: 1688 188 313
+Epoch 1/15
+1688/1688 ━━━━━━━━━━━━━━━━━━━━ 287s 143ms/step - accuracy: 0.5936 - loss: 1.1253 - val_accuracy: 0.8132 - val_loss: 0.4780 - learning_rate: 0.0010
+Epoch 2/15
+1688/1688 ━━━━━━━━━━━━━━━━━━━━ 222s 131ms/step - accuracy: 0.8243 - loss: 0.4945 - val_accuracy: 0.8492 - val_loss: 0.4149 - learning_rate: 0.0010
+Epoch 3/15
+1688/1688 ━━━━━━━━━━━━━━━━━━━━ 222s 131ms/step - accuracy: 0.8521 - loss: 0.4258 - val_accuracy: 0.8443 - val_loss: 0.4103 - learning_rate: 0.0010
+Epoch 4/15
+1688/1688 ━━━━━━━━━━━━━━━━━━━━ 184s 109ms/step - accuracy: 0.8524 - loss: 0.4213 - val_accuracy: 0.8740 - val_loss: 0.3595 - learning_rate: 0.0010
+Epoch 5/15
+1688/1688 ━━━━━━━━━━━━━━━━━━━━ 189s 112ms/step - accuracy: 0.8745 - loss: 0.3607 - val_accuracy: 0.8615 - val_loss: 0.3863 - learning_rate: 0.0010
+Epoch 6/15
+1688/1688 ━━━━━━━━━━━━━━━━━━━━ 188s 112ms/step - accuracy: 0.8790 - loss: 0.3455 - val_accuracy: 0.8602 - val_loss: 0.4758 - learning_rate: 0.0010
+Epoch 7/15
+1688/1688 ━━━━━━━━━━━━━━━━━━━━ 188s 111ms/step - accuracy: 0.8966 - loss: 0.2854 - val_accuracy: 0.8917 - val_loss: 0.2885 - learning_rate: 5.0000e-04
+Epoch 8/15
+1688/1688 ━━━━━━━━━━━━━━━━━━━━ 188s 112ms/step - accuracy: 0.9071 - loss: 0.2573 - val_accuracy: 0.9042 - val_loss: 0.2717 - learning_rate: 5.0000e-04
+Epoch 9/15
+1688/1688 ━━━━━━━━━━━━━━━━━━━━ 207s 122ms/step - accuracy: 0.9120 - loss: 0.2432 - val_accuracy: 0.8920 - val_loss: 0.2866 - learning_rate: 5.0000e-04
+Epoch 10/15
+1688/1688 ━━━━━━━━━━━━━━━━━━━━ 200s 119ms/step - accuracy: 0.9165 - loss: 0.2324 - val_accuracy: 0.8982 - val_loss: 0.2715 - learning_rate: 5.0000e-04
+Epoch 11/15
+1688/1688 ━━━━━━━━━━━━━━━━━━━━ 194s 115ms/step - accuracy: 0.9199 - loss: 0.2212 - val_accuracy: 0.9045 - val_loss: 0.2795 - learning_rate: 5.0000e-04
+Epoch 12/15
+1688/1688 ━━━━━━━━━━━━━━━━━━━━ 211s 125ms/step - accuracy: 0.9232 - loss: 0.2113 - val_accuracy: 0.9052 - val_loss: 0.2760 - learning_rate: 5.0000e-04
+Epoch 13/15
+1688/1688 ━━━━━━━━━━━━━━━━━━━━ 216s 128ms/step - accuracy: 0.9332 - loss: 0.1818 - val_accuracy: 0.9098 - val_loss: 0.2511 - learning_rate: 2.5000e-04
+Epoch 14/15
+1688/1688 ━━━━━━━━━━━━━━━━━━━━ 215s 127ms/step - accuracy: 0.9380 - loss: 0.1683 - val_accuracy: 0.9090 - val_loss: 0.2588 - learning_rate: 2.5000e-04
+Epoch 15/15
+1688/1688 ━━━━━━━━━━━━━━━━━━━━ 228s 135ms/step - accuracy: 0.9411 - loss: 0.1599 - val_accuracy: 0.9060 - val_loss: 0.2618 - learning_rate: 2.5000e-04
+313/313 ━━━━━━━━━━━━━━━━━━━━ 7s 22ms/step - accuracy: 0.9039 - loss: 0.2761 
+Test Accuracy: 0.9046
